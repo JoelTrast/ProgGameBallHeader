@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/Ball.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/player.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerFootLeft.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerFootRight.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingDown1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingDown2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingDown3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingLeft1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingLeft2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingLeft3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingRight1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingRight2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/BallHeader/BallHeader/Content/playerLookingRight3.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
