@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/background.png</SourceFile>
+  <SourceFile>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/background.png</SourceFile>
   <SourceTime>2020-01-20T20:26:34.8416323+01:00</SourceTime>
-  <DestFile>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/bin/Windows/Content/background.xnb</DestFile>
-  <DestTime>2020-01-20T21:00:02.0224892+01:00</DestTime>
+  <DestFile>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/bin/Windows/Content/background.xnb</DestFile>
+  <DestTime>2020-01-22T00:20:12.0765653+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

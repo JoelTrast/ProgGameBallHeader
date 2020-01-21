@@ -20,9 +20,8 @@ namespace BallHeader
         static SpriteFont myFont;
         //static HighScore highScore;
         static Ball ball;
-        static Spelare1 spelare1;
-        static Spelare2 spelare2;
-        static Player player;
+        static Player player1;
+        static Player player2;
 
         static Texture2D[] vänster;
         static Texture2D[] höger;
@@ -43,11 +42,9 @@ namespace BallHeader
             vänster = new Texture2D[] { content.Load<Texture2D>("playerLookingLeft1"), content.Load<Texture2D>("playerLookingLeft2"), content.Load<Texture2D>("playerLookingLeft3") };
             höger = new Texture2D[] { content.Load<Texture2D>("playerLookingRight1"), content.Load<Texture2D>("playerLookingRight2"), content.Load<Texture2D>("playerLookingRight3") };
 
-            //player = new Player(vänster, höger, window.ClientBounds.Width / 2 - 23, window.ClientBounds.Height, 4f, 0f, 0);
+            player1 = new Player(vänster, höger, 46 * 2, window.ClientBounds.Height, 4f, 0f, Keys.A, Keys.D, Keys.Space);
 
-            spelare1 = new Spelare1(vänster, höger, 46*2, window.ClientBounds.Height, 4f, 0f, 0);
-
-            spelare2 = new Spelare2(vänster, höger, window.ClientBounds.Width - (46 * 2), window.ClientBounds.Height, 4f, 0f, 0);
+            player2 = new Player(vänster, höger, window.ClientBounds.Width - 46 * 3, window.ClientBounds.Height, 4f, 0f, Keys.Left, Keys.Right, Keys.Enter);
 
             ball = new Ball(content.Load<Texture2D>("ball"), window.ClientBounds.Width / 2 - 15, 100, 0, 0);
 
@@ -93,22 +90,17 @@ namespace BallHeader
             // background.Update(window);
 
             ball.Update(window, gameTime);
-            //player.Update(window, gameTime);
 
-            /*
-            if (ball.CheckCollision(player))
-            {
-                ball.Kollision(player, window);
-            }
-            */
-            spelare1.Update(window, gameTime);
-            spelare2.Update(window, gameTime);
+            player1.Update(window, gameTime);
+            player2.Update(window, gameTime);
 
-            
-            if (ball.CheckCollision(spelare1) || ball.CheckCollision(spelare2))
-            {
-                ball.Kollision(player, window);
-            }
+
+            if (ball.CheckCollision(player1))
+                ball.Kollision(player1, window);
+
+
+            if (ball.CheckCollision(player2))
+                ball.Kollision(player2, window);
             
 
             return State.Run;
@@ -130,9 +122,8 @@ namespace BallHeader
             //background.Draw(spriteBatch);
 
             ball.Draw(spriteBatch);
-            //player.Draw(spriteBatch);
-            spelare1.Draw(spriteBatch);
-            spelare2.Draw(spriteBatch);
+            player1.Draw(spriteBatch);
+            player2.Draw(spriteBatch);
 
 
 

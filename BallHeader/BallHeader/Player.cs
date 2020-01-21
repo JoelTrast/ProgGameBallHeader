@@ -9,16 +9,30 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BallHeader
 {
-    abstract class Player : PhysicalObject
+    class Player : PhysicalObject
     {
-        public Vector2 origin;
+        Keys keyCodeLeft;
+        Keys keyCodeRight;
+        Keys keyCodeJump;
+
+
+        Texture2D[] vänster;
+        Texture2D[] höger;
 
         float elaps;
         float delay = 80f;
         double frames;
 
-        public Player(Texture2D[] vänster, Texture2D[] höger, float X, float Y, float speedX, float speedY, double frames) : base(höger[0], X, Y, speedX, speedY)
+        public Vector2 origin;
+
+        public Player(Texture2D[] vänster, Texture2D[] höger, float X, float Y, float speedX, float speedY, Keys keyCodeLeft, Keys keyCodeRight, Keys keyCodeJump) : base(höger[0], X, Y, speedX, speedY)
         {
+            this.keyCodeJump = keyCodeJump;
+            this.keyCodeLeft = keyCodeLeft;
+            this.keyCodeRight = keyCodeRight;
+            this.höger = höger;
+            this.vänster = vänster;
+
             this.origin = new Vector2(texture.Width / 2, texture.Width / 2);
         }
 
@@ -62,6 +76,41 @@ namespace BallHeader
                 else frames++;
 
                 elaps = 0;
+            }
+
+            KeyboardState keyboardState = Keyboard.GetState();
+            //SPEED
+            if (keyboardState.IsKeyDown(keyCodeRight))
+            {
+                vector.X += speed.X;
+            }
+
+            if (keyboardState.IsKeyDown(keyCodeLeft))
+            {
+                vector.X -= speed.X;
+            }
+
+            if (keyboardState.IsKeyDown(keyCodeJump))
+            {
+                speed.Y = -4f;
+            }
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            KeyboardState keyboardState = Keyboard.GetState();
+
+            if (keyboardState.IsKeyDown(keyCodeRight))
+            {
+                spriteBatch.Draw(höger[(int)frames], vector, Color.White);
+            }
+            else if (keyboardState.IsKeyDown(keyCodeLeft))
+            {
+                spriteBatch.Draw(vänster[(int)frames], vector, Color.White);
+            }
+            else
+            {
+                spriteBatch.Draw(höger[1], vector, Color.White);
             }
         }
 
