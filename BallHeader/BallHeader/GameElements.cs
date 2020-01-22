@@ -173,14 +173,12 @@ namespace BallHeader
             }
 
 
-            /*
+            
             //GAME OVER
-            if (P2Score > P1Score)
+            if(P1Score>P2Score && P1Score == 5)
             {
-                Reset(window, content);
-                return State.HightScore;
+
             }
-            */
 
             return State.Run;
             
