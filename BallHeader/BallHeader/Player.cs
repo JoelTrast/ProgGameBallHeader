@@ -11,6 +11,14 @@ namespace BallHeader
 {
     class Player : PhysicalObject
     {
+        static Keys keyCodeLeftPlayer1 = Keys.A;
+        static Keys keyCodeRightPlayer1 = Keys.D;
+        static Keys keyCodeJumpPlayer1 = Keys.Space;
+        static Keys keyCodeLeftPlayer2 = Keys.Left;
+        static Keys keyCodeRightPlayer2 = Keys.Right;
+        static Keys keyCodeJumpPlayer2 = Keys.Enter;
+
+        bool isPlayer1;
         Keys keyCodeLeft;
         Keys keyCodeRight;
         Keys keyCodeJump;
@@ -25,11 +33,22 @@ namespace BallHeader
 
         public Vector2 origin;
 
-        public Player(Texture2D[] vänster, Texture2D[] höger, float X, float Y, float speedX, float speedY, Keys keyCodeLeft, Keys keyCodeRight, Keys keyCodeJump) : base(höger[0], X, Y, speedX, speedY)
+        public Player(Texture2D[] vänster, Texture2D[] höger, float X, float Y, float speedX, float speedY, bool isPlayer1) : base(höger[0], X, Y, speedX, speedY)
         {
-            this.keyCodeJump = keyCodeJump;
-            this.keyCodeLeft = keyCodeLeft;
-            this.keyCodeRight = keyCodeRight;
+            this.isPlayer1 = isPlayer1;
+            if (isPlayer1)
+            {
+                this.keyCodeJump = keyCodeJumpPlayer1;
+                this.keyCodeLeft = keyCodeLeftPlayer1;
+                this.keyCodeRight = keyCodeRightPlayer1;
+            }
+            else
+            {
+                this.keyCodeJump = keyCodeJumpPlayer2;
+                this.keyCodeLeft = keyCodeLeftPlayer2;
+                this.keyCodeRight = keyCodeRightPlayer2;
+            }
+
             this.höger = höger;
             this.vänster = vänster;
 
@@ -110,7 +129,10 @@ namespace BallHeader
             }
             else
             {
-                spriteBatch.Draw(höger[1], vector, Color.White);
+                if (isPlayer1)
+                    spriteBatch.Draw(höger[1], vector, Color.White);
+                else
+                    spriteBatch.Draw(vänster[1], vector, Color.White);
             }
         }
 

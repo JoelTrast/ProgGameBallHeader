@@ -23,8 +23,13 @@ namespace BallHeader
         static Player player1;
         static Player player2;
 
-        static Texture2D[] vänster;
-        static Texture2D[] höger;
+        static Texture2D[] leftP1;
+        static Texture2D[] rightP1;
+
+        static Texture2D[] leftP2;
+        static Texture2D[] rightP2;
+
+        static Goal goal;
 
         public enum State { Menu, Run, HightScore, Quit };
         public static State currentState;
@@ -38,13 +43,19 @@ namespace BallHeader
 
         public static void LoadContent(ContentManager content, GameWindow window)
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            vänster = new Texture2D[] { content.Load<Texture2D>("playerLookingLeft1"), content.Load<Texture2D>("playerLookingLeft2"), content.Load<Texture2D>("playerLookingLeft3") };
-            höger = new Texture2D[] { content.Load<Texture2D>("playerLookingRight1"), content.Load<Texture2D>("playerLookingRight2"), content.Load<Texture2D>("playerLookingRight3") };
+            //Player1 sprites
+            leftP1 = new Texture2D[] { content.Load<Texture2D>("playerLookingLeft1"), content.Load<Texture2D>("playerLookingLeft2"), content.Load<Texture2D>("playerLookingLeft3") };
+            rightP1 = new Texture2D[] { content.Load<Texture2D>("playerLookingRight1"), content.Load<Texture2D>("playerLookingRight2"), content.Load<Texture2D>("playerLookingRight3") };
 
-            player1 = new Player(vänster, höger, 46 * 2, window.ClientBounds.Height, 4f, 0f, Keys.A, Keys.D, Keys.Space);
+            //Player2 sprites
+            leftP2 = new Texture2D[] { content.Load<Texture2D>("player2left1"), content.Load<Texture2D>("player2left2"), content.Load<Texture2D>("player2left3") };
+            rightP2 = new Texture2D[] { content.Load<Texture2D>("player2right1"), content.Load<Texture2D>("player2right2"), content.Load<Texture2D>("player2right3") };            
 
-            player2 = new Player(vänster, höger, window.ClientBounds.Width - 46 * 3, window.ClientBounds.Height, 4f, 0f, Keys.Left, Keys.Right, Keys.Enter);
+            goal = new Goal(content.Load<Texture2D>("Goal"), 0, window.ClientBounds.Height/ 2);
+
+            player1 = new Player(leftP1, rightP1, 46 * 2, window.ClientBounds.Height, 4f, 0f, true);
+
+            player2 = new Player(leftP2, rightP2, window.ClientBounds.Width - 46 * 3, window.ClientBounds.Height, 4f, 0f, false);
 
             ball = new Ball(content.Load<Texture2D>("ball"), window.ClientBounds.Width / 2 - 15, 100, 0, 0);
 
@@ -125,7 +136,7 @@ namespace BallHeader
             player1.Draw(spriteBatch);
             player2.Draw(spriteBatch);
 
-
+            goal.Draw(spriteBatch);
 
             //printText.Print("points: " + player.Points, spriteBatch, 0, 0);
         }

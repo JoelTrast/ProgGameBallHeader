@@ -111,3 +111,48 @@ C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\obj\x86\Debug\BallHeader.csproj.CopyComplete
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\Player images.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\background.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\Ball.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerFootLeft.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerFootRight.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingDown1.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingDown2.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingDown3.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingLeft1.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingLeft2.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingLeft3.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingRight1.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingRight2.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingRight3.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\BallHeader.exe
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\BallHeader.pdb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\MonoGame.Framework.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.XInput.dll
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\MonoGame.Framework.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\SharpDX.XInput.xml
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\obj\x86\Debug\BallHeader.csprojAssemblyReference.cache
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\obj\x86\Debug\BallHeader.csproj.CoreCompileInputs.cache
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\obj\x86\Debug\BallHeader.csproj.CopyComplete
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\obj\x86\Debug\BallHeader.exe
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\obj\x86\Debug\BallHeader.pdb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2left1.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2left2.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2left3.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2right1.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2right2.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2right3.xnb
+I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\Goal.xnb

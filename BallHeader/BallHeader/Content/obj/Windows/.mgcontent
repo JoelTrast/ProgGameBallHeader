@@ -4,22 +4,36 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/background.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/Ball.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/player.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerFootLeft.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerFootRight.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingDown1.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingDown2.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingDown3.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingLeft1.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingLeft2.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingLeft3.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingRight1.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingRight2.png</File>
-    <File>C:/Users/joelt/Downloads/BallHeader-20200118T140126Z-001/BallHeader/BallHeader/Content/playerLookingRight3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/background.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/Ball.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/Goal.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2left1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2left2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2left3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2right1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2right2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2right3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerFootLeft.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerFootRight.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingDown1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingDown2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingDown3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingLeft1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingLeft2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingLeft3.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingRight1.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingRight2.png</File>
+    <File>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerLookingRight3.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
