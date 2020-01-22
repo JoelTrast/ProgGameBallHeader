@@ -12,6 +12,9 @@ namespace BallHeader
     class PhysicalObject : MovingObject
     {
         protected bool isAlive = true;
+        protected float elaps;
+        protected double frames;
+
 
         public PhysicalObject(Texture2D texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
         {
@@ -29,6 +32,24 @@ namespace BallHeader
         {
             get { return isAlive; }
             set { isAlive = value; }
+        }
+
+
+        public double Frames(double amount, float delay, GameTime gameTime)
+        {
+            
+
+            elaps += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (elaps >= delay)
+            {
+                if (frames > amount) frames = 0;
+
+                else frames++;
+
+                elaps = 0;
+            }
+
+            return frames;
         }
     }
 }

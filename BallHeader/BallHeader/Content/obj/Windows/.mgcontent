@@ -26,8 +26,16 @@
     <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/playerLookingRight1.png</File>
     <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/playerLookingRight2.png</File>
     <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/playerLookingRight3.png</File>
+    <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/seagull1.png</File>
+    <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/seagull2.png</File>
+    <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/seagull3.png</File>
+    <File>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/seagull4.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

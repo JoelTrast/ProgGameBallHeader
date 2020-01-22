@@ -28,10 +28,6 @@ namespace BallHeader
         Texture2D[] vänster;
         Texture2D[] höger;
 
-        float elaps;
-        float delay = 80f;
-        double frames;
-
         public Vector2 origin;
 
         public Player(Texture2D[] vänster, Texture2D[] höger, float X, float Y, float speedX, float speedY, bool isPlayer1) : base(höger[0], X, Y, speedX, speedY)
@@ -60,7 +56,7 @@ namespace BallHeader
                                                     /*UPDATE*/
         /*################################################################################################*/
 
-        public virtual void Update(GameWindow window, GameTime gameTime)
+        public void Update(GameWindow window, GameTime gameTime)
         {
             //if (keyboardState.IsKeyDown(Keys.Escape))
             //isAlive = false;
@@ -91,19 +87,13 @@ namespace BallHeader
                 vector.Y = window.ClientBounds.Height - texture.Height;
             }
 
-            //frames loop
-            elaps += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-            if (elaps >= delay)
-            {
-                if (frames > 1) frames = 0;
+            //Frames loop
+            frames = Frames(1, 80f, gameTime);
 
-                else frames++;
 
-                elaps = 0;
-            }
-
-            KeyboardState keyboardState = Keyboard.GetState();
             //SPEED
+            KeyboardState keyboardState = Keyboard.GetState();
+
             if (keyboardState.IsKeyDown(keyCodeRight))
             {
                 vector.X += speed.X;
@@ -146,7 +136,7 @@ namespace BallHeader
 
 
         /*################################################################################################*/
-        /*DRAW*/
+                                                    /*DRAW*/
         /*################################################################################################*/
         public override void Draw(SpriteBatch spriteBatch)
         {

@@ -164,3 +164,7 @@ C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2right2.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player2right3.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\myFont.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\seagull1.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\seagull2.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\seagull3.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\seagull4.xnb

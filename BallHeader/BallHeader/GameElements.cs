@@ -37,6 +37,8 @@ namespace BallHeader
         static SpriteFont myFont;
         static PrintText printText;
 
+        static Seagull seagull;
+
         static Texture2D background;
 
         public enum State { Menu, Run, HightScore, Quit };
@@ -51,6 +53,9 @@ namespace BallHeader
 
         public static void LoadContent(ContentManager content, GameWindow window)
         {
+            //Seagull
+            seagull = new Seagull(new Texture2D[] { content.Load<Texture2D>("seagull1"), content.Load<Texture2D>("seagull2"), content.Load<Texture2D>("seagull3"), content.Load<Texture2D>("seagull4") }, -120, 50, 4f, 0);
+
             //Player1 sprites
             leftP1 = new Texture2D[] { content.Load<Texture2D>("playerLookingLeft1"), content.Load<Texture2D>("playerLookingLeft2"), content.Load<Texture2D>("playerLookingLeft3") };
             rightP1 = new Texture2D[] { content.Load<Texture2D>("playerLookingRight1"), content.Load<Texture2D>("playerLookingRight2"), content.Load<Texture2D>("playerLookingRight3") };
@@ -117,6 +122,8 @@ namespace BallHeader
 
             player1.Update(window, gameTime);
             player2.Update(window, gameTime);
+
+            seagull.Update(window, gameTime);
 
 
             //Ball kollision
@@ -197,6 +204,7 @@ namespace BallHeader
         public static void RunDraw(SpriteBatch spriteBatch, GameWindow window)
         {
             //background.Draw(spriteBatch);
+            seagull.Draw(spriteBatch);
 
             ball.Draw(spriteBatch);
 
