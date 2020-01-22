@@ -13,10 +13,11 @@ namespace BallHeader
     {
         static Keys keyCodeLeftPlayer1 = Keys.A;
         static Keys keyCodeRightPlayer1 = Keys.D;
-        static Keys keyCodeJumpPlayer1 = Keys.Space;
+        static Keys keyCodeJumpPlayer1 = Keys.W;
+
         static Keys keyCodeLeftPlayer2 = Keys.Left;
         static Keys keyCodeRightPlayer2 = Keys.Right;
-        static Keys keyCodeJumpPlayer2 = Keys.Enter;
+        static Keys keyCodeJumpPlayer2 = Keys.Up;
 
         bool isPlayer1;
         Keys keyCodeLeft;
@@ -54,6 +55,10 @@ namespace BallHeader
 
             this.origin = new Vector2(texture.Width / 2, texture.Width / 2);
         }
+
+        /*################################################################################################*/
+                                                    /*UPDATE*/
+        /*################################################################################################*/
 
         public virtual void Update(GameWindow window, GameTime gameTime)
         {
@@ -113,8 +118,36 @@ namespace BallHeader
             {
                 speed.Y = -4f;
             }
+
+            //PlayerKollision
+            if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up))
+                speed.X = 4f;
         }
 
+        /*################################################################################################*/
+                                                    /*METODER*/
+        /*################################################################################################*/
+
+        public void PlayerKollision()
+        {
+            KeyboardState keyboardState = Keyboard.GetState();
+            speed.X = 0f;
+
+            if (keyboardState.IsKeyDown(Keys.A) || keyboardState.IsKeyDown(Keys.Right))
+                speed.X = 4f;
+        }
+
+        public void Reset(float X, float Y)
+        {
+            vector.X = X;
+            vector.Y = Y;
+            speed.X = 4f;
+        }
+
+
+        /*################################################################################################*/
+        /*DRAW*/
+        /*################################################################################################*/
         public override void Draw(SpriteBatch spriteBatch)
         {
             KeyboardState keyboardState = Keyboard.GetState();

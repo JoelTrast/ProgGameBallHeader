@@ -17,7 +17,6 @@ namespace BallHeader
         static Texture2D goldCoinSprite;
         //static Menu menu;
         //static Background background;
-        static SpriteFont myFont;
         //static HighScore highScore;
         static Ball ball;
         static Player player1;
@@ -29,7 +28,16 @@ namespace BallHeader
         static Texture2D[] leftP2;
         static Texture2D[] rightP2;
 
-        static Goal goal;
+        static Goal goal1;
+        static Goal goal2;
+
+        static int P1Score;
+        static int P2Score;
+
+        static SpriteFont myFont;
+        static PrintText printText;
+
+        static Texture2D background;
 
         public enum State { Menu, Run, HightScore, Quit };
         public static State currentState;
@@ -51,14 +59,18 @@ namespace BallHeader
             leftP2 = new Texture2D[] { content.Load<Texture2D>("player2left1"), content.Load<Texture2D>("player2left2"), content.Load<Texture2D>("player2left3") };
             rightP2 = new Texture2D[] { content.Load<Texture2D>("player2right1"), content.Load<Texture2D>("player2right2"), content.Load<Texture2D>("player2right3") };            
 
-            goal = new Goal(content.Load<Texture2D>("Goal"), 0, window.ClientBounds.Height/ 2);
+            //Players
+            player1 = new Player(leftP1, rightP1, 46 * 2 + 20, window.ClientBounds.Height, 4f, 0f, true);
+            player2 = new Player(leftP2, rightP2, window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height, 4f, 0f, false);
 
-            player1 = new Player(leftP1, rightP1, 46 * 2, window.ClientBounds.Height, 4f, 0f, true);
+            //Goals
+            goal1 = new Goal(content.Load<Texture2D>("Goal"), 0, window.ClientBounds.Height - 186, false);
+            goal2 = new Goal(content.Load<Texture2D>("Goal"), window.ClientBounds.Width - 94, window.ClientBounds.Height - 186, true);
 
-            player2 = new Player(leftP2, rightP2, window.ClientBounds.Width - 46 * 3, window.ClientBounds.Height, 4f, 0f, false);
-
+            //Ball
             ball = new Ball(content.Load<Texture2D>("ball"), window.ClientBounds.Width / 2 - 15, 100, 0, 0);
 
+            printText = new PrintText(content.Load<SpriteFont>("myFont"));
 
             /*
             menuSprite = content.Load<Texture2D>("menu");
@@ -100,19 +112,75 @@ namespace BallHeader
         {
             // background.Update(window);
 
+            //Update gameElements
             ball.Update(window, gameTime);
 
             player1.Update(window, gameTime);
             player2.Update(window, gameTime);
 
 
+            //Ball kollision
             if (ball.CheckCollision(player1))
                 ball.Kollision(player1, window);
 
 
             if (ball.CheckCollision(player2))
                 ball.Kollision(player2, window);
-            
+
+            //Score
+            if (ball.CheckCollision(goal1))
+            {
+                if (ball.X <= goal1.Width)
+                {
+                    if (ball.Y + ball.Height >= window.ClientBounds.Height - goal1.Height && ball.Y + ball.Height <= window.ClientBounds.Height - goal1.Height + 10)
+                    {
+                        ball.GoalKollision(goal1);
+                    }
+                    else if (ball.X <= goal1.Width / 2)
+                    {
+                        ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
+                        player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
+                        player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+                        P2Score++;
+                    }
+                }
+            }
+
+            if (ball.CheckCollision(goal2))
+            {
+                if(ball.X + ball.Width >= window.ClientBounds.Width - goal2.Width)
+                {
+                    if (ball.Y + ball.Height >= window.ClientBounds.Height - goal2.Height && ball.Y + ball.Height <= window.ClientBounds.Height - goal2.Height +10)
+                    {
+                        ball.GoalKollision(goal2);
+                    }
+                    else if (ball.X +ball.Width>=window.ClientBounds.Width - goal2.Width / 2)
+                    {
+                        ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
+                        player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
+                        player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+                        P1Score++;
+                    }
+                }
+            }
+
+
+            //Player kollision
+            if (player1.CheckCollision(player2))
+            {
+                player1.PlayerKollision();
+                player2.PlayerKollision();
+            }
+
+
+            /*
+            //GAME OVER
+            if (P2Score > P1Score)
+            {
+                Reset(window, content);
+                return State.HightScore;
+            }
+            */
 
             return State.Run;
             
@@ -128,17 +196,19 @@ namespace BallHeader
         }
 
 
-        public static void RunDraw(SpriteBatch spriteBatch)
+        public static void RunDraw(SpriteBatch spriteBatch, GameWindow window)
         {
             //background.Draw(spriteBatch);
 
             ball.Draw(spriteBatch);
+
             player1.Draw(spriteBatch);
             player2.Draw(spriteBatch);
 
-            goal.Draw(spriteBatch);
+            goal1.Draw(spriteBatch);
+            goal2.Draw(spriteBatch);
 
-            //printText.Print("points: " + player.Points, spriteBatch, 0, 0);
+            printText.Print($"P1 score: {P1Score} | P2 score: {P2Score}", spriteBatch, window.ClientBounds.Width / 2, 100);
         }
 
         public static State HighScoreUpdate(GameTime gameTime, GameWindow window, ContentManager content)

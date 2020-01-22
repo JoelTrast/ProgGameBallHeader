@@ -31,11 +31,13 @@ namespace BallHeader
         /// </summary>
         protected override void Initialize()
         {
-
-            //graphics.IsFullScreen = true;
-            //graphics.ApplyChanges();
-            // TODO: Add your initialization logic here
-
+            /*
+            graphics.IsFullScreen = true;
+            graphics.PreferredBackBufferWidth = 1920;
+            graphics.PreferredBackBufferHeight = 1080;
+            graphics.ApplyChanges();
+            */
+            
             base.Initialize();
         }
 
@@ -87,7 +89,7 @@ namespace BallHeader
 
             spriteBatch.Begin();
 
-            GameElements.RunDraw(spriteBatch);
+            GameElements.RunDraw(spriteBatch, Window);
 
             spriteBatch.End();
 

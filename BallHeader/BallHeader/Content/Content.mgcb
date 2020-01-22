@@ -49,6 +49,13 @@
 /processorParam:TextureFormat=Color
 /build:Goal.png
 
+#begin myFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:myFont.spritefont
+
 #begin player.png
 /importer:TextureImporter
 /processor:TextureProcessor

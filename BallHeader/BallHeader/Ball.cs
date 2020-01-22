@@ -59,19 +59,18 @@ namespace BallHeader
             if (vector.Y > window.ClientBounds.Height - texture.Height)
             {
                 vector.Y = window.ClientBounds.Height - texture.Height;
-                
+
                 //friktion
-                speed.X -= speed.X < 0 ? -0.2f : 0.2f;
+                if (speed.X < 0)
+                    speed.X += 0.3f;
+                else if (speed.X > 0)
+                    speed.X -= 0.3f;
 
                 //studsar vid marken
                 speed.Y = studs(); 
             }
 
             elaps += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-
-            //Rotation
-            rotation += speed.X > 0 ? MathHelper.ToRadians(speed.X) : -MathHelper.ToRadians(-speed.X);
         }
 
         /*################################################################################################*/
@@ -90,8 +89,8 @@ namespace BallHeader
             //ball speed i X-axeln
             if (keyboardState.IsKeyDown(Keys.Space) || keyboardState.IsKeyDown(Keys.Enter) || keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
-                speed.Y = -6f;
-                Ac = -6f;
+                speed.Y = -5f;
+                Ac = -5f;
             }
             else
             {
@@ -108,6 +107,21 @@ namespace BallHeader
             }
         }
 
+        public void GoalKollision(Goal goal)
+        {
+            speed.Y = studs();
+         
+        }
+
+        public void Reset(float X, float Y, float speedX, float speedY)
+        {
+            vector.X = X;
+            vector.Y = Y;
+            speed.X = speedX;
+            speed.Y = speedY;
+            isAlive = true;
+        }
+
         //studs
         public float studs()
         {
@@ -120,7 +134,6 @@ namespace BallHeader
                     elaps = 0;
                 }
             }
-
             return Ac;
         }
 
