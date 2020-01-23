@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/playerFootLeft.png</SourceFile>
-  <SourceTime>2020-01-22T10:29:00.6998906+01:00</SourceTime>
-  <DestFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/bin/Windows/Content/playerFootLeft.xnb</DestFile>
-  <DestTime>2020-01-23T10:24:07.691829+01:00</DestTime>
+  <SourceFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/menu.png</SourceFile>
+  <SourceTime>2019-11-07T14:14:18.1520111+01:00</SourceTime>
+  <DestFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/bin/Windows/menu.xnb</DestFile>
+  <DestTime>2020-01-23T14:16:13.7395325+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

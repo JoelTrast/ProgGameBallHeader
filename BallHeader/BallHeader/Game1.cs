@@ -37,7 +37,8 @@ namespace BallHeader
             graphics.PreferredBackBufferHeight = 1080;
             graphics.ApplyChanges();
             */
-            
+            GameElements.currentState = GameElements.State.Menu;
+            GameElements.Initialize();
             base.Initialize();
         }
 
@@ -71,25 +72,56 @@ namespace BallHeader
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+                this.Exit();
 
-            GameElements.RunUpdate(Content, Window, gameTime);
+            switch (GameElements.currentState)
+            {
+                case GameElements.State.Run:
+                    GameElements.currentState = GameElements.RunUpdate(Content, Window, gameTime);
+                    break;
+
+                case GameElements.State.HightScore:
+                    GameElements.currentState = GameElements.HighScoreUpdate(gameTime, Window, Content);
+                    break;
+
+                case GameElements.State.Quit:
+                    this.Exit();
+                    break;
+
+                default:
+                    GameElements.currentState = GameElements.MenuUpdate();
+                    break;
+            }
 
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.LightGreen);
 
             spriteBatch.Begin();
+            switch (GameElements.currentState)
+            {
+                case GameElements.State.Run:
+                    GameElements.RunDraw(spriteBatch, Window);
+                    break;
 
-            GameElements.RunDraw(spriteBatch, Window);
+                case GameElements.State.HightScore:
+                    GameElements.HighScoreDraw(spriteBatch);
+                    break;
+
+                case GameElements.State.Quit:
+                    this.Exit();
+                    break;
+
+                default:
+                    GameElements.MenuDraw(spriteBatch);
+                    break;
+            }
+
 
             spriteBatch.End();
 

@@ -21,7 +21,7 @@ namespace BallHeader
         public void Update(GameWindow window, GameTime gameTime)
         {
             vector.X += speed.X;
-            frames = Frames(2, 150f, gameTime);
+            frames = Frames(2, 120f, gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

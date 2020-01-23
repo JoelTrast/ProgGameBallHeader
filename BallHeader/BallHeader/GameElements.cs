@@ -12,12 +12,11 @@ namespace BallHeader
 {
     static class GameElements
     {
-        //static Texture2D menuSprite;
-        //static Vector2 menuPos;
-        static Texture2D goldCoinSprite;
-        //static Menu menu;
-        //static Background background;
-        //static HighScore highScore;
+        private static Texture2D menuSprite;
+        private static Vector2 menuPos;
+
+        static HighScore highScore;
+
         static Ball ball;
         static Player player1;
         static Player player2;
@@ -39,8 +38,6 @@ namespace BallHeader
 
         static Seagull seagull;
 
-        static Texture2D background;
-
         public enum State { Menu, Run, HightScore, Quit };
         public static State currentState;
 
@@ -53,6 +50,10 @@ namespace BallHeader
 
         public static void LoadContent(ContentManager content, GameWindow window)
         {
+            menuSprite = content.Load<Texture2D>("menu");
+            menuPos.X = window.ClientBounds.Width / 2 - menuSprite.Width / 2;
+            menuPos.Y = window.ClientBounds.Height / 2 - menuSprite.Height / 2;
+
             //Seagull
             seagull = new Seagull(new Texture2D[] { content.Load<Texture2D>("seagull1"), content.Load<Texture2D>("seagull2"), content.Load<Texture2D>("seagull3"), content.Load<Texture2D>("seagull4") }, -120, 50, 4f, 0);
 
@@ -77,40 +78,36 @@ namespace BallHeader
 
             printText = new PrintText(content.Load<SpriteFont>("myFont"));
 
-            /*
-            menuSprite = content.Load<Texture2D>("menu");
-            menuPos.X = window.ClientBounds.Width / 2 - menuSprite.Width / 2;
-            menuPos.Y = window.ClientBounds.Height / 2 - menuSprite.Height / 2;
-            */
-
-            //Hämtar font från content
-            //printText = new PrintText(content.Load<SpriteFont>("myFont"));
 
             /*
             menu = new Menu((int)State.Menu);
-            menu.AddItem(content.Load<Texture2D>("menu/start"), (int)State.Run);
-            menu.AddItem(content.Load<Texture2D>("menu/highscore"), (int)State.HightScore);
-            menu.AddItem(content.Load<Texture2D>("menu/exit"), (int)State.Quit);
+            menu.AddItem(content.Load<Texture2D>("start"), (int)State.Run);
+            menu.AddItem(content.Load<Texture2D>("highscore"), (int)State.HightScore);
+            menu.AddItem(content.Load<Texture2D>("exit"), (int)State.Quit);
             */
-            //background = new Background(content.Load<Texture2D>("background"), window);
-
-            //myFont = content.Load<SpriteFont>("myFont");
 
             //highScore.LoadFromFile("../../../highscore.txt");
-            // TODO: use this.Content to load your game content here
         }
 
 
-        public static State MenuUpdate(GameTime gameTime)
+
+        public static State MenuUpdate()
         {
-            return 0; //(State)menu.Update(gameTime);
+            KeyboardState keyboardState = Keyboard.GetState();
+            if (keyboardState.IsKeyDown(Keys.D1))
+                return State.Run;
+            if (keyboardState.IsKeyDown(Keys.D2))
+                return State.HightScore;
+            if (keyboardState.IsKeyDown(Keys.D3))
+                return State.Quit;
+
+            return State.Menu;
         }
 
         public static void MenuDraw(SpriteBatch spriteBatch)
         {
-            //background.Draw(spriteBatch);
             //menu.Draw(spriteBatch);
-            //spriteBatch.Draw(menuSprite, menuPos, Color.White);
+            spriteBatch.Draw(menuSprite, menuPos, Color.White);
         }
 
         public static State RunUpdate(ContentManager content, GameWindow window, GameTime gameTime)
@@ -182,18 +179,22 @@ namespace BallHeader
 
             
             //GAME OVER
-            if(P1Score>P2Score && P1Score == 5)
+            if(P1Score == 5)
             {
+                return State.HightScore;
 
             }
-
+            else if(P2Score == 5)
+            {
+                return State.HightScore;
+            }
             return State.Run;
-            
-            
+
+
+
             /*
             if (!player.IsAlive)
             {
-                //Reset(window, content);
                 return State.HightScore;
             }
             return State.Run;
@@ -214,7 +215,8 @@ namespace BallHeader
             goal1.Draw(spriteBatch);
             goal2.Draw(spriteBatch);
 
-            printText.Print($"P1 score: {P1Score} | P2 score: {P2Score}", spriteBatch, window.ClientBounds.Width / 2, 100);
+            //Text
+            printText.Print($"{P1Score} - {P2Score}", spriteBatch, window.ClientBounds.Width / 2, 100);
         }
 
         public static State HighScoreUpdate(GameTime gameTime, GameWindow window, ContentManager content)
@@ -232,7 +234,7 @@ namespace BallHeader
 
         public static void HighScoreDraw(SpriteBatch spriteBatch)
         {
-            //highScore.EnterDraw(spriteBatch, myFont);
+            highScore.EnterDraw(spriteBatch, myFont);
         }
 
         /*
@@ -266,21 +268,5 @@ namespace BallHeader
         {
             //highScore.SaveToFile("../../../highscore.txt");
         }
-
-        /*
-        public static State MenuUpdate()
-        {
-            KeyboardState keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.S))
-                return State.Run;
-            if (keyboardState.IsKeyDown(Keys.H))
-                return State.HightScore;
-            if (keyboardState.IsKeyDown(Keys.A))
-                return State.Quit;
-
-            return State.Menu;
-        }*/
-
-
     }
 }

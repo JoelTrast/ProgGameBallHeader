@@ -43,6 +43,7 @@
     <Compile Include="GameElements.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Goal.cs" />
+    <Compile Include="HighScore.cs" />
     <Compile Include="MovingObject.cs" />
     <Compile Include="PhysicalObject.cs" />
     <Compile Include="Player.cs" />
