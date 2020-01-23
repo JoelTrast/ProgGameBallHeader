@@ -43,6 +43,7 @@ class HighScore
 
     // Används för att skriva ut vilket tecken spelaren har valt just nu:
     string currentChar;
+
     int key_index = 0; // Denna används för att mata in spelarens namn
                        // Dessa används för att kontrollera när tangenter trycktes in:
     double lastChange = 0;

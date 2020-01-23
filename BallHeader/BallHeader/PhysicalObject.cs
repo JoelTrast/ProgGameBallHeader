@@ -15,6 +15,7 @@ namespace BallHeader
         protected float elaps;
         protected double frames;
 
+        KeyboardState keyboardState = Keyboard.GetState();
 
         public PhysicalObject(Texture2D texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
         {
@@ -34,11 +35,15 @@ namespace BallHeader
             set { isAlive = value; }
         }
 
+        public KeyboardState KeyboardState
+        {
+            get { return keyboardState; }
+            set { keyboardState = value; }
+        }
+
 
         public double Frames(double amount, float delay, GameTime gameTime)
         {
-            
-
             elaps += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
             if (elaps >= delay)
             {

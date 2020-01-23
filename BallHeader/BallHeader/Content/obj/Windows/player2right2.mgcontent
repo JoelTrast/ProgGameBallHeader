@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/player2right2.png</SourceFile>
-  <SourceTime>2020-01-22T10:39:36.0693373+01:00</SourceTime>
-  <DestFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/bin/Windows/player2right2.xnb</DestFile>
-  <DestTime>2020-01-23T13:49:53.7307541+01:00</DestTime>
+  <SourceFile>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/player2right2.png</SourceFile>
+  <SourceTime>2020-01-22T14:33:29.4666605+01:00</SourceTime>
+  <DestFile>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/bin/Windows/player2right2.xnb</DestFile>
+  <DestTime>2020-01-23T20:22:43.385539+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -24,6 +24,7 @@ namespace BallHeader
         Keys keyCodeRight;
         Keys keyCodeJump;
 
+        float freezTime;
 
         Texture2D[] vänster;
         Texture2D[] höger;
@@ -112,6 +113,8 @@ namespace BallHeader
             //PlayerKollision
             if (keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up))
                 speed.X = 4f;
+
+
         }
 
         /*################################################################################################*/
@@ -134,9 +137,18 @@ namespace BallHeader
             speed.X = 4f;
         }
 
+        public void freez()
+        {
+            speed.X = 0;
+        }
+
+        public void speedReset()
+        {
+            speed.X = 4f;
+        }
 
         /*################################################################################################*/
-                                                    /*DRAW*/
+        /*DRAW*/
         /*################################################################################################*/
         public override void Draw(SpriteBatch spriteBatch)
         {

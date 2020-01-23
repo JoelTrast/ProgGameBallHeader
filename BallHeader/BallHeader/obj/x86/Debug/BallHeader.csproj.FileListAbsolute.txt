@@ -80,12 +80,6 @@ C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\obj\x86\Debug
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\Player images.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\background.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\Ball.xnb
-C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\player.xnb
-C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerFootLeft.xnb
-C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerFootRight.xnb
-C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingDown1.xnb
-C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingDown2.xnb
-C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingDown3.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingLeft1.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingLeft2.xnb
 C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\playerLookingLeft3.xnb
@@ -174,3 +168,8 @@ I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGa
 I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\seagull3.xnb
 I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\seagull4.xnb
 I:\rbk\Elevmtrl 03-04\Data\Joakim Cronelöv\Elevmappar\PROG2121910\ezp836\ProgGameBallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\menu.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\menu.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\exit.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\highscore.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\start.xnb
+C:\Users\joelt\OneDrive\Documents\BallHeader\BallHeader\BallHeader\bin\Windows\x86\Debug\Content\bajs.xnb

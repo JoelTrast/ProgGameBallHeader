@@ -12,50 +12,83 @@ namespace BallHeader
 {
     static class GameElements
     {
+        //Background
+        private static Texture2D background;
+        private static Vector2 BGpos;
+
+        //Menu
         private static Texture2D menuSprite;
         private static Vector2 menuPos;
 
-        static HighScore highScore;
+        //MenuV2
+        static Menu menu;
 
+        //ScoreBoard
+        static HighScore highScore;
+        static Scoreboard scoreboard;
+
+        //Score
+        static int P1Score;
+        static int P2Score;
+
+        //Objects
+
+        //Ball
         static Ball ball;
+
+        //PLayers
         static Player player1;
         static Player player2;
 
+        //Seagull Items
+        static Seagull seagull;
+
+        static Texture2D[] seagullSprite;
+        static Texture2D bulletSprite;
+
+        //Goals
+        static Goal goal1;
+        static Goal goal2;
+
+        //textures for players
         static Texture2D[] leftP1;
         static Texture2D[] rightP1;
 
         static Texture2D[] leftP2;
         static Texture2D[] rightP2;
 
-        static Goal goal1;
-        static Goal goal2;
-
-        static int P1Score;
-        static int P2Score;
-
+        //Fonts
         static SpriteFont myFont;
         static PrintText printText;
 
-        static Seagull seagull;
-
+        //Games states
         public enum State { Menu, Run, HightScore, Quit };
         public static State currentState;
 
+
         public static void Initialize()
         {
-            //goldCoins = new List<GoldCoin>(); //skapar en ny Lista med goldCoins
             //highScore = new HighScore(10);
-            
         }
 
         public static void LoadContent(ContentManager content, GameWindow window)
         {
+            //Background
+            background = content.Load<Texture2D>("background");
+            BGpos = new Vector2(0, -280);
+
+            //Old Menu
+            /*
             menuSprite = content.Load<Texture2D>("menu");
             menuPos.X = window.ClientBounds.Width / 2 - menuSprite.Width / 2;
             menuPos.Y = window.ClientBounds.Height / 2 - menuSprite.Height / 2;
+            */
 
-            //Seagull
-            seagull = new Seagull(new Texture2D[] { content.Load<Texture2D>("seagull1"), content.Load<Texture2D>("seagull2"), content.Load<Texture2D>("seagull3"), content.Load<Texture2D>("seagull4") }, -120, 50, 4f, 0);
+            //Menu
+            menu = new Menu((int)State.Menu);
+            menu.AddItem(content.Load<Texture2D>("start"), (int)State.Run);
+            menu.AddItem(content.Load<Texture2D>("highscore"), (int)State.HightScore);
+            menu.AddItem(content.Load<Texture2D>("exit"), (int)State.Quit);
 
             //Player1 sprites
             leftP1 = new Texture2D[] { content.Load<Texture2D>("playerLookingLeft1"), content.Load<Texture2D>("playerLookingLeft2"), content.Load<Texture2D>("playerLookingLeft3") };
@@ -76,23 +109,25 @@ namespace BallHeader
             //Ball
             ball = new Ball(content.Load<Texture2D>("ball"), window.ClientBounds.Width / 2 - 15, 100, 0, 0);
 
+            //Seagull sprites
+            seagullSprite = new Texture2D[] { content.Load<Texture2D>("seagull1"), content.Load<Texture2D>("seagull2"), content.Load<Texture2D>("seagull3"), content.Load<Texture2D>("seagull4") };
+            bulletSprite = content.Load<Texture2D>("bajs");
+
+            //Seagull
+            seagull = new Seagull(seagullSprite, -50, 50, 4f, 0, bulletSprite);
+
+            //Font
             printText = new PrintText(content.Load<SpriteFont>("myFont"));
 
-
-            /*
-            menu = new Menu((int)State.Menu);
-            menu.AddItem(content.Load<Texture2D>("start"), (int)State.Run);
-            menu.AddItem(content.Load<Texture2D>("highscore"), (int)State.HightScore);
-            menu.AddItem(content.Load<Texture2D>("exit"), (int)State.Quit);
-            */
-
-            //highScore.LoadFromFile("../../../highscore.txt");
+            //Scoreboard
+            //highScore.LoadFromFile("highscore.txt");
         }
 
-
-
-        public static State MenuUpdate()
+        public static State MenuUpdate(GameTime gameTime)
         {
+            return (State)menu.Update(gameTime);
+            
+            /*OLD
             KeyboardState keyboardState = Keyboard.GetState();
             if (keyboardState.IsKeyDown(Keys.D1))
                 return State.Run;
@@ -102,25 +137,27 @@ namespace BallHeader
                 return State.Quit;
 
             return State.Menu;
+            */
         }
 
         public static void MenuDraw(SpriteBatch spriteBatch)
         {
-            //menu.Draw(spriteBatch);
-            spriteBatch.Draw(menuSprite, menuPos, Color.White);
+            //Background
+            spriteBatch.Draw(background, BGpos, Color.White);
+
+            //Menu
+            menu.Draw(spriteBatch);
+
+            //spriteBatch.Draw(menuSprite, menuPos, Color.White); OLD
         }
 
         public static State RunUpdate(ContentManager content, GameWindow window, GameTime gameTime)
         {
-            // background.Update(window);
-
-            //Update gameElements
+            //Update Objects
             ball.Update(window, gameTime);
 
             player1.Update(window, gameTime);
             player2.Update(window, gameTime);
-
-            seagull.Update(window, gameTime);
 
 
             //Ball kollision
@@ -142,9 +179,7 @@ namespace BallHeader
                     }
                     else if (ball.X <= goal1.Width / 2)
                     {
-                        ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
-                        player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
-                        player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+                        Reset(window, content);
                         P2Score++;
                     }
                 }
@@ -160,14 +195,11 @@ namespace BallHeader
                     }
                     else if (ball.X +ball.Width>=window.ClientBounds.Width - goal2.Width / 2)
                     {
-                        ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
-                        player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
-                        player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+                        Reset(window, content);
                         P1Score++;
                     }
                 }
             }
-
 
             //Player kollision
             if (player1.CheckCollision(player2))
@@ -176,42 +208,79 @@ namespace BallHeader
                 player2.PlayerKollision();
             }
 
+            //Spawning seagulls
+            seagull.Update(window, gameTime);
 
-            
-            //GAME OVER
-            if(P1Score == 5)
+            foreach (Bullet b in seagull.Bullets)
+                b.Update();
+
+            if (!seagull.IsAlive)
+                seagull.Reset(-50, 50);
+
+                
+            //Enemie hit
+            foreach (Bullet b in seagull.Bullets)
             {
-                return State.HightScore;
+                if (b.CheckCollision(player1))
+                {
+                    player1.freez();
+
+                    if (!seagull.IsAlive)
+                        player1.speedReset();
+                }
+
+                if (b.CheckCollision(player2))
+                {
+                    player2.freez();
+
+                    if (!seagull.IsAlive)
+                        player2.speedReset();
+                }
+            }
+
+
+
+            //Pause to menu
+            KeyboardState keyboardState = Keyboard.GetState();
+            if (keyboardState.IsKeyDown(Keys.Escape))
+            {
+                return State.Menu;
+            }
+
+            //GAME OVER
+            if (P1Score == 5)
+            {
+                return State.Menu;
 
             }
             else if(P2Score == 5)
             {
-                return State.HightScore;
+                return State.Menu;
             }
             return State.Run;
 
-
-
-            /*
-            if (!player.IsAlive)
-            {
-                return State.HightScore;
-            }
-            return State.Run;
-            */
         }
 
 
         public static void RunDraw(SpriteBatch spriteBatch, GameWindow window)
         {
-            //background.Draw(spriteBatch);
+            //Backhground
+            spriteBatch.Draw(background, BGpos, Color.White);
+
+            //Enemie
             seagull.Draw(spriteBatch);
 
-            ball.Draw(spriteBatch);
+            foreach (Bullet b in seagull.Bullets)
+                b.Draw(spriteBatch);
 
+            //Ball
+            ball.Draw(spriteBatch);
+            
+            //Players
             player1.Draw(spriteBatch);
             player2.Draw(spriteBatch);
 
+            //goals
             goal1.Draw(spriteBatch);
             goal2.Draw(spriteBatch);
 
@@ -228,45 +297,35 @@ namespace BallHeader
                 return State.Menu;
             }
 
-            //highScore.EnterUpdate(gameTime, player.Points);
+            //ADD SCORE
+            highScore.EnterUpdate(gameTime, P1Score);
             return State.HightScore;
         }
 
         public static void HighScoreDraw(SpriteBatch spriteBatch)
         {
+            //Backhground
+            spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
+
             highScore.EnterDraw(spriteBatch, myFont);
         }
 
-        /*
-        private static void Reset(GameWindow window, ContentManager content)
-        {
-            player.Reset(380, 400, 2.5f, 4.5f);
-
-            enemies.Clear();
-
-            Random random = new Random();
-            Texture2D tmpSprite = content.Load<Texture2D>("mine");
-            for (int i = 0; i < 5; i++)
-            {
-                int rndX = random.Next(0, window.ClientBounds.Width + tmpSprite.Width);
-                int rndY = random.Next(0, window.ClientBounds.Height + tmpSprite.Height / 2);
-                Mine temp = new Mine(tmpSprite, rndX, rndY);
-                enemies.Add(temp);
-            }
-
-            tmpSprite = content.Load<Texture2D>("tripod");
-            for (int i = 0; i < 5; i++)
-            {
-                int rndX = random.Next(0, window.ClientBounds.Width + tmpSprite.Width);
-                int rndY = random.Next(0, window.ClientBounds.Height + tmpSprite.Height / 2);
-                Mine temp = new Mine(tmpSprite, rndX, rndY);
-                enemies.Add(temp);
-            }
-        }*/
-
         public static void UnloadSave()
         {
-            //highScore.SaveToFile("../../../highscore.txt");
+            //highScore.SaveToFile("highscore.txt");
+        }
+
+        private static void Reset(GameWindow window, ContentManager content)
+        {
+            ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
+            player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
+            player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+
+            seagull.Reset(-50, 50);
+
+            foreach (Bullet b in seagull.Bullets.ToList())
+                seagull.Bullets.Remove(b);
+
         }
     }
 }

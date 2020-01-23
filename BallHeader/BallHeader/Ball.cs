@@ -11,14 +11,18 @@ namespace BallHeader
 {
     class Ball : PhysicalObject
     {
-        float elaps;
         float Ac = -6f;
-        float ballMid;
-        float playerMid;
+        bool isJumping = false;
+
+        float ballMidX;
+        float playerMidX;
+
+        float ballMidY;
+        float playerMidY;
 
         //rotations variabler
         public Vector2 origin;
-        float rotation;
+        //float rotation;
 
 
         public Ball(Texture2D texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
@@ -56,9 +60,9 @@ namespace BallHeader
             }
 
             //Y-axel ner
-            if (vector.Y > window.ClientBounds.Height - texture.Height)
+            if (vector.Y > window.ClientBounds.Height - texture.Height - 6)
             {
-                vector.Y = window.ClientBounds.Height - texture.Height;
+                vector.Y = window.ClientBounds.Height - texture.Height - 6;
 
                 //friktion
                 if (speed.X < 0)
@@ -82,44 +86,64 @@ namespace BallHeader
         {
             KeyboardState keyboardState = Keyboard.GetState();
 
-            //spelare och bollens mittpunkt
-            playerMid = player.origin.X + player.X;
-            ballMid = origin.X + vector.X;
+            //spelare och bollens mittpunkt(X)
+            playerMidX = player.origin.X + player.X;
+            ballMidX = origin.X + vector.X;
+
+            //spelare och bollens mittpunkt(Y)
+            playerMidY = player.origin.Y + player.Y;
+            ballMidY = origin.Y + vector.Y;
+
 
             //ball speed i X-axeln
-            if (keyboardState.IsKeyDown(Keys.Space) || keyboardState.IsKeyDown(Keys.Enter) || keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
+            if (keyboardState.IsKeyDown(Keys.Space) || keyboardState.IsKeyDown(Keys.Enter)|| keyboardState.IsKeyDown(Keys.W) || keyboardState.IsKeyDown(Keys.Up))
             {
-                speed.Y = -5f;
-                Ac = -5f;
-            }
-            else
-            {
-                speed.Y = studs();
+                Ac = -5f; //reset studs
             }
 
-            if (Ac == 0 && vector.Y < window.ClientBounds.Height - texture.Height) //ifall bollen inte studsar på huvudet så är speed.X = 0
+            if (player.Y + player.Height < window.ClientBounds.Height)
+                isJumping = true;
+            else
+                isJumping = false;
+
+            //Y
+            if (ballMidY != playerMidY && isJumping)
+            {
+                if (keyboardState.IsKeyDown(Keys.Space) || keyboardState.IsKeyDown(Keys.Enter))
+                    speed.Y = -5f;
+                else
+                    speed.Y = (ballMidY - playerMidY) / 10;
+
+            }
+            else if (!isJumping)
+                speed.Y = studs();
+
+            //X
+            if (Ac == 0 && vector.Y < window.ClientBounds.Height - texture.Height - 6) //ifall bollen inte studsar på huvudet så är speed.X = 0
             {
                 speed.X = 0;
             }
-            else if (ballMid != playerMid)
+            else if (ballMidX != playerMidX)
             {
-                speed.X = (ballMid - playerMid) / 7;
+
+                    speed.X = (ballMidX - playerMidX) / 7;
             }
         }
 
+        //GOAL KOLLISION
         public void GoalKollision(Goal goal)
         {
             speed.Y = studs();
          
         }
 
+        //RESET BALL
         public void Reset(float X, float Y, float speedX, float speedY)
         {
             vector.X = X;
             vector.Y = Y;
             speed.X = speedX;
             speed.Y = speedY;
-            isAlive = true;
         }
 
         //studs
