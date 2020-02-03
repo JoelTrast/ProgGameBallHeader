@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/seagull4.png</SourceFile>
-  <SourceTime>2020-01-23T20:45:12.953624+01:00</SourceTime>
-  <DestFile>C:/Users/joelt/OneDrive/Documents/BallHeader/BallHeader/BallHeader/Content/bin/Windows/Content/seagull4.xnb</DestFile>
-  <DestTime>2020-01-23T20:46:26.5927126+01:00</DestTime>
+  <SourceFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/seagull4.png</SourceFile>
+  <SourceTime>2020-01-27T09:17:20.2139214+01:00</SourceTime>
+  <DestFile>I:/rbk/Elevmtrl 03-04/Data/Joakim Cronelöv/Elevmappar/PROG2121910/ezp836/ProgGameBallHeader/BallHeader/BallHeader/Content/bin/Windows/Content/seagull4.xnb</DestFile>
+  <DestTime>2020-01-27T09:17:51.2612339+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
