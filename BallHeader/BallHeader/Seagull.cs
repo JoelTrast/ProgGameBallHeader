@@ -39,8 +39,11 @@ namespace BallHeader
                 bullets.Add(temp);
             }
 
-            //funkar inte
-            if (vector.X > window.ClientBounds.Width)
+            //Reset
+            if (vector.X - 100 > window.ClientBounds.Width)
+                isAlive = false;
+
+            if (vector.X + 100 < 0)
                 isAlive = false;
         }
 

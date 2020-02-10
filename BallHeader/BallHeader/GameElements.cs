@@ -214,8 +214,17 @@ namespace BallHeader
             foreach (Bullet b in seagull.Bullets)
                 b.Update();
 
+            Random random = new Random();
+            int spawnpoint = random.Next(1, 2);
+
             if (!seagull.IsAlive)
-                seagull.Reset(-50, 50);
+            {
+                if(spawnpoint==1)
+                    seagull.Reset(-50, 50);
+                if(spawnpoint==2)
+                    seagull.Reset(window.ClientBounds.Width+50, 50);
+            }
+                
 
                 
             //Enemie hit
@@ -257,8 +266,8 @@ namespace BallHeader
             {
                 return State.Menu;
             }
-            return State.Run;
 
+            return State.Run;
         }
 
 
