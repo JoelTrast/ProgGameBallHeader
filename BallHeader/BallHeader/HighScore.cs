@@ -233,16 +233,8 @@ class HighScore
     // =======================================================================
     public void LoadFromFile(string filename)
     {
-        try
-        {
-            StreamReader sr = new StreamReader(filename);
-        }
-        catch(FileNotFoundException filNotFound)
-        {
+        StreamReader sr = new StreamReader(filename);
 
-        }
-
-        /*
         string row;
         while ((row = sr.ReadLine()) != null)
         {
@@ -252,7 +244,6 @@ class HighScore
             highscore.Add(temp);
         }
         sr.Close();
-        */
     }
 }
 

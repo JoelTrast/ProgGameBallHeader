@@ -49,7 +49,10 @@ namespace BallHeader
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture[(int)frames], vector, Color.White);
+            if(speed.X<0)
+                spriteBatch.Draw(texture[(int)frames], vector, null, Color.White, 0, new Vector2(0, 0), 1, SpriteEffects.FlipHorizontally, 0f);
+            else
+                spriteBatch.Draw(texture[(int)frames], vector, Color.White);
 
             foreach (Bullet b in bullets)
                 b.Draw(spriteBatch);
@@ -57,10 +60,13 @@ namespace BallHeader
 
         public List<Bullet> Bullets { get { return bullets; } }
 
-        public void Reset(float X, float Y)
+        public void Reset(float X, float Y, float speedX)
         {
             vector.X = X;
             vector.Y = Y;
+
+            speed.X = speedX;
+
             isAlive = true;
         }
     }

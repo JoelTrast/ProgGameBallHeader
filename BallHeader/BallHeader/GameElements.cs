@@ -17,10 +17,6 @@ namespace BallHeader
         private static Vector2 BGpos;
 
         //Menu
-        private static Texture2D menuSprite;
-        private static Vector2 menuPos;
-
-        //MenuV2
         static Menu menu;
 
         //ScoreBoard
@@ -65,7 +61,9 @@ namespace BallHeader
         public enum State { Menu, Run, HightScore, Quit };
         public static State currentState;
 
-
+        /*################################################################################################*/
+                                                    /*INITIALIZE*/
+        /*################################################################################################*/
         public static void Initialize()
         {
             //highScore = new HighScore(10);
@@ -76,13 +74,6 @@ namespace BallHeader
             //Background
             background = content.Load<Texture2D>("background");
             BGpos = new Vector2(0, -280);
-
-            //Old Menu
-            /*
-            menuSprite = content.Load<Texture2D>("menu");
-            menuPos.X = window.ClientBounds.Width / 2 - menuSprite.Width / 2;
-            menuPos.Y = window.ClientBounds.Height / 2 - menuSprite.Height / 2;
-            */
 
             //Menu
             menu = new Menu((int)State.Menu);
@@ -123,21 +114,12 @@ namespace BallHeader
             //highScore.LoadFromFile("highscore.txt");
         }
 
+        /*################################################################################################*/
+                                                    /*MENU*/
+        /*################################################################################################*/
         public static State MenuUpdate(GameTime gameTime)
         {
             return (State)menu.Update(gameTime);
-            
-            /*OLD
-            KeyboardState keyboardState = Keyboard.GetState();
-            if (keyboardState.IsKeyDown(Keys.D1))
-                return State.Run;
-            if (keyboardState.IsKeyDown(Keys.D2))
-                return State.HightScore;
-            if (keyboardState.IsKeyDown(Keys.D3))
-                return State.Quit;
-
-            return State.Menu;
-            */
         }
 
         public static void MenuDraw(SpriteBatch spriteBatch)
@@ -151,6 +133,9 @@ namespace BallHeader
             //spriteBatch.Draw(menuSprite, menuPos, Color.White); OLD
         }
 
+        /*################################################################################################*/
+                                                    /*RUNUPDATE*/
+        /*################################################################################################*/
         public static State RunUpdate(ContentManager content, GameWindow window, GameTime gameTime)
         {
             //Update Objects
@@ -168,7 +153,7 @@ namespace BallHeader
             if (ball.CheckCollision(player2))
                 ball.Kollision(player2, window);
 
-            //Score
+            //Score player 1
             if (ball.CheckCollision(goal1))
             {
                 if (ball.X <= goal1.Width)
@@ -179,12 +164,15 @@ namespace BallHeader
                     }
                     else if (ball.X <= goal1.Width / 2)
                     {
-                        Reset(window, content);
+                        player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
+                        player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+                        ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
                         P2Score++;
                     }
                 }
             }
 
+            //Score player 2
             if (ball.CheckCollision(goal2))
             {
                 if(ball.X + ball.Width >= window.ClientBounds.Width - goal2.Width)
@@ -195,7 +183,9 @@ namespace BallHeader
                     }
                     else if (ball.X +ball.Width>=window.ClientBounds.Width - goal2.Width / 2)
                     {
-                        Reset(window, content);
+                        player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
+                        player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
+                        ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
                         P1Score++;
                     }
                 }
@@ -214,15 +204,16 @@ namespace BallHeader
             foreach (Bullet b in seagull.Bullets)
                 b.Update();
 
-            Random random = new Random();
-            int spawnpoint = random.Next(1, 2);
 
             if (!seagull.IsAlive)
             {
-                if(spawnpoint==1)
-                    seagull.Reset(-50, 50);
-                if(spawnpoint==2)
-                    seagull.Reset(window.ClientBounds.Width+50, 50);
+                Random random = new Random();
+                int spawnpoint = random.Next(1, 3);
+
+                if (spawnpoint==1)
+                    seagull.Reset(-50, 50, 4f);
+                else
+                    seagull.Reset(window.ClientBounds.Width+50, 50, -4f);
             }
                 
 
@@ -259,17 +250,18 @@ namespace BallHeader
             //GAME OVER
             if (P1Score == 5)
             {
-                return State.Menu;
+                //Reset(window, content);
+                return State.HightScore;
 
             }
             else if(P2Score == 5)
             {
-                return State.Menu;
+                //Reset(window, content);
+                return State.HightScore;
             }
 
             return State.Run;
         }
-
 
         public static void RunDraw(SpriteBatch spriteBatch, GameWindow window)
         {
@@ -297,6 +289,9 @@ namespace BallHeader
             printText.Print($"{P1Score} - {P2Score}", spriteBatch, window.ClientBounds.Width / 2, 100);
         }
 
+        /*################################################################################################*/
+                                                    /*LEADERBOARD*/
+        /*################################################################################################*/
         public static State HighScoreUpdate(GameTime gameTime, GameWindow window, ContentManager content)
         {
             KeyboardState keyboardState = Keyboard.GetState();
@@ -319,18 +314,27 @@ namespace BallHeader
             highScore.EnterDraw(spriteBatch, myFont);
         }
 
+        /*################################################################################################*/
+                                                    /*UNLOAD*/
+        /*################################################################################################*/
         public static void UnloadSave()
         {
             //highScore.SaveToFile("highscore.txt");
         }
 
+        /*################################################################################################*/
+                                                    /*RESET WINDOW*/
+        /*################################################################################################*/
         private static void Reset(GameWindow window, ContentManager content)
         {
             ball.Reset(window.ClientBounds.Width / 2 - 15, 100, 0, 0);
             player1.Reset(46 * 2 + 20, window.ClientBounds.Height);
             player2.Reset(window.ClientBounds.Width - 46 * 3 - 20, window.ClientBounds.Height);
 
-            seagull.Reset(-50, 50);
+            seagull.Reset(-50, 50, 4f);
+
+            P1Score = 0;
+            P2Score = 0;
 
             foreach (Bullet b in seagull.Bullets.ToList())
                 seagull.Bullets.Remove(b);
